@@ -98,8 +98,8 @@ gulp.task('sprite:svg', function() {
 			svg: {
 				sprite: "sprite.svg"
 			},
-			pngPath: 'css/%f',
-			svgPath: 'css/%f'
+			pngPath: 'sprite/%f',
+			svgPath: 'sprite/%f'
 		}))
 		.pipe(gulpif('*.css', gulp.dest('src/sass/sprite/')))
 		.pipe(gulpif('*.svg', gulp.dest('public/css/sprite')))
@@ -116,7 +116,7 @@ gulp.task('sprite:png', function() {
 	.pipe(spritesmith({
 		imgName: 'sprite_png.png',
 		cssName: 'sprite_png.css',
-		imgPath: 'css/sprite_png.png'
+		imgPath: 'sprite/sprite_png.png'
 	}))
 	.pipe(gulpif('*.css', gulp.dest('src/sass/sprite/')))
 	.pipe(gulpif('*.png', gulp.dest('public/css/sprite')))
@@ -139,8 +139,8 @@ gulp.task('build:img', gulp.series('img', 'sprite:svg', 'sprite:png'));
 
 
 gulp.task('watch', function() {
-	gulp.watch('src/sass/**', gulp.series('sass'));
-	gulp.watch('src/html/**', gulp.series('html'));
+	gulp.watch(['src/sass/blocks/*.{sass,scss}', 'src/sass/lib/*.{css,scss,sass}', 'src/sass/sprite/*.{css,scss,sass}', 'src/sass/util/*.{scss,sass}'], gulp.series('sass'));
+	gulp.watch(['src/html/index.html', 'src/html/tmp/*.html'], gulp.series('html'));
 	gulp.watch('src/js/**', gulp.series('js'));
 	gulp.watch('src/img/**', gulp.series('build:img'));
 })
