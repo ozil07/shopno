@@ -12,26 +12,29 @@ const bs           = require('browser-sync').create();
 
 
 //Gulp plugins
-const sass         = require('gulp-sass');
-const sourcemaps   = require('gulp-sourcemaps');
-const gulpif       = require('gulp-if');
-const debug        = require('gulp-debug');
-const autoprefixer = require('gulp-autoprefixer');
-const imagemin     = require('gulp-imagemin');
-const tinypng      = require('gulp-tinypng');
-const newer        = require('gulp-newer');
-const remember     = require('gulp-remember');
-const concat       = require('gulp-concat');
-const cached       = require('gulp-cached');
-const cssnano      = require('gulp-cssnano');
-const rename       = require('gulp-rename');
-const uglify       = require('gulp-uglify');
-const notify       = require('gulp-notify');
-const svgsprite    = require('gulp-svg-sprites');
-const rigger   		 = require('gulp-rigger');
-const htmlminify   = require('gulp-html-minify');
-const svg2png   	 = require('gulp-svg2png');
-const spritesmith  = require("gulp.spritesmith");
+const sass             = require('gulp-sass');
+const sourcemaps       = require('gulp-sourcemaps');
+const gulpif           = require('gulp-if');
+const debug            = require('gulp-debug');
+const autoprefixer     = require('gulp-autoprefixer');
+const imagemin         = require('gulp-imagemin');
+const tinypng          = require('gulp-tinypng');
+const newer            = require('gulp-newer');
+const remember         = require('gulp-remember');
+const concat           = require('gulp-concat');
+const cached           = require('gulp-cached');
+const cssnano          = require('gulp-cssnano');
+const rename           = require('gulp-rename');
+const uglify           = require('gulp-uglify');
+const notify           = require('gulp-notify');
+const svgsprite        = require('gulp-svg-sprites');
+const rigger           = require('gulp-rigger');
+const htmlminify       = require('gulp-html-minify');
+const svg2png          = require('gulp-svg2png');
+const spritesmith      = require("gulp.spritesmith");
+const stripCssComments = require('gulp-strip-css-comments');
+const csscomb 	       = require('gulp-csscomb');
+const combineMq        = require('gulp-combine-mq');
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_END == 'development';
 
