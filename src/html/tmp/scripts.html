@@ -1,13 +1,18 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-</script>
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-<script>
-    var slideEl = $(".slide--parent");
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Readmore.js/2.2.1/readmore.min.js"></script>
 
-    slideEl.flickity({
-        imagesLoaded: true,
-        wrapAround: true,
-        autoPlay: true,
-        pauseAutoPlayOnHover: false
-    });
+
+<script>
+	$('.owl-carousel').owlCarousel({
+		loop:true,
+		nav: false,
+		dot: true,
+		margin: 50,
+		items: 1,
+		merge: true,
+		stagePadding: 25,
+		dotsClass: 'owl-dots col-12 col-md-4 col-lg-5'
+	});
+
+	$('.aboutus__content').readmore();
 </script>

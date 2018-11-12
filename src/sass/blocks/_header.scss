@@ -33,9 +33,9 @@ header {
         border: 2px solid black;
         border-radius: 2px;
         padding: .8em 2.5em;
-        margin-top: 150px;
+        position: relative;
+        top: 100px;
         @include max-screen(576px) {
-            margin-top: 80px;
             font-size: 14px;
         }
     }

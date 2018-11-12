@@ -1,7 +1,30 @@
 .team {
-    padding: 100px;
+    padding: 100px 0;
     .team__player {
         height: 400px;
+        position: relative;
+    }
+    .team__player__wrap {
+        position: absolute;
+        top: 0;
+        left: 15px;
+        right: 15px;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        &:hover .team__player__info {
+            opacity: 1;
+        }
+    }
+    .team__player__info {
+        background-color: $blue;
+        opacity: 0;
+        transition: opacity .3s linear;
+        padding: 20px 40px;
+    }
+    .team__player__name:after {
+        content: '∕';
+        margin: 0 5px 0 3px;
     }
     h3 {
         margin-bottom: 80px;
@@ -10,5 +33,8 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+    span {
+        font-size: .5px;
     }
 }

@@ -8,7 +8,7 @@
     display: inline-block;
     background-image: url("sprite/sprite.svg");
     background-repeat: no-repeat;
-    background-size: 5.3em 5.3em;
+    background-size: 51.2em 200.2em;
 }
 
 .no-svg .icon:before {
@@ -17,10 +17,46 @@
 
 
 
-  .icon.menu:before {
+  .icon.linkedin:before {
       background-position: 0em 0em;
+      width: 51.2em;
+      height: 51.2em;
+  }
+
+
+
+
+  .icon.mail-black-envelope-symbol:before {
+      background-position: 0em -51.2em;
+      width: 48.521100000000004em;
+      height: 48.521100000000004em;
+  }
+
+
+
+
+  .icon.menu:before {
+      background-position: 0em -99.8em;
       width: 5.3em;
       height: 5.3em;
+  }
+
+
+
+
+  .icon.social-media:before {
+      background-position: 0em -105.1em;
+      width: 51.2em;
+      height: 51.2em;
+  }
+
+
+
+
+  .icon.text:before {
+      background-position: 0em -156.3em;
+      width: 43.8542em;
+      height: 43.8543em;
   }
 
 

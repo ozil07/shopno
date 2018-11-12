@@ -1,9 +1,24 @@
-nav {
+nav:not(#my-menu) {
     position: absolute;
     top: 0;
     padding-top: 60px;
     width: 100%;
+    z-index: 1;
     @include max-screen(576px) {
         padding: 30px 15px;
     }
+    button {
+    	background-color: transparent;
+    	border: none;
+    	cursor: pointer;
+    	filter: drop-shadow(0 0 1px #000);
+    	.icon {
+    		font-size: 8px;
+    	}
+    }
+}
+
+
+#my-menu {
+	z-index: 10;
 }

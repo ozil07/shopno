@@ -41,9 +41,9 @@ const isDevelopment = !process.env.NODE_ENV || process.env.NODE_END == 'developm
 
 const assets = {
     scss: [
-        'src/main.scss',
+        'src/sass/main.sass',
         'src/sass/blocks/*.{sass,scss}',
-        'src/sass/lib/*.{css,scss,sass}',
+        'src/sass/lib/bootstrap/scss/bootstrap.scss',
         'src/sass/sprite/*.{css,scss,sass}',
         'src/sass/util/*.{scss,sass}'
     ],
@@ -57,7 +57,7 @@ const assets = {
 
 
 gulp.task('sass', function() {
-    return gulp.src('src/sass/*.*')
+    return gulp.src('src/sass/main.sass')
         .pipe(gulpif(isDevelopment, sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer({
@@ -79,7 +79,6 @@ gulp.task('sass', function() {
 gulp.task('html', function() {
     return gulp.src(assets.html[0])
         .pipe(rigger())
-        .pipe(htmlminify())
         .pipe(gulp.dest('public'));
 });
 
@@ -170,7 +169,7 @@ gulp.task('build:img', gulp.series('img', 'sprite:svg', 'sprite:png'));
 
 
 gulp.task('watch', function() {
-    gulp.watch('public/css/main.css', gulp.series('sass'));
+    gulp.watch(assets.scss, gulp.series('sass'));
     gulp.watch(assets.html, gulp.series('html'));
     gulp.watch('src/js/**', gulp.series('js'));
     gulp.watch('src/img/**', gulp.series('build:img'));

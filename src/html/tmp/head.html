@@ -1,7 +1,78 @@
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.2.2/jquery.mmenu.all.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.mmenu/7.2.2/jquery.mmenu.all.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script>
+		$(document).ready(function($) {
+			$('#my-menu').mmenu({
+
+				extensions: {
+					"all": ["theme-dark", "pagedim-black","fx-menu-fade","border-full"],
+					"(max-width: 400px)": ["fullscreen","position-front"],
+				},
+
+				"counters": true,
+
+				backButton: {
+					close: true,
+				},
+				navbar: {
+					title: "My photos"
+				},
+				"navbars": [
+				{
+					"position": "top",
+					"content": [
+					"breadcrumbs",
+					"close"
+					]
+				},
+				{
+               "position": "bottom",
+               "content": [
+                  "<a class='fa fa-envelope' href='#/'></a>",
+                  "<a class='fa fa-twitter' href='#/'></a>",
+                  "<a class='fa fa-facebook' href='#/'></a>"
+               ]
+            }
+				],
+
+				onClick: {
+					close: true
+				},
+				backButton: {
+					close: true
+				},
+				offCanvas: true,
+				drag: {
+					menu: {
+						open: ($.mmenu.support.touch ? true : false)
+					},
+					panels: {
+						close: false
+					}
+				},
+			},
+			);
+
+			var API = $('#my-menu').data('mmenu');
+			$('#menu-button').click(function(event) {
+				API.open();
+			});
+			$('#close-btn').click(function(event) {
+				API.close();
+			});
+
+		});
+	</script>
+
 </head>

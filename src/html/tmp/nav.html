@@ -1,8 +1,41 @@
 <nav>
-    <div class="container">
-        <div class="row justify-content-between">
-            <a href="/"><img src="img/logo.png" alt=""></a>
-            <a href="#"><span class="icon menu"></span></a>
-        </div>
-    </div>
+	<div class="container">
+		<div class="row justify-content-between">
+			<a href="/"><img src="img/logo.png" alt=""></a>
+			<button id="menu-button"><span class="icon menu"></span></button>
+		</div>
+	</div>
+</nav>
+
+<nav id="my-menu">
+	<div>
+		<img src="img/logo.png" />
+		<p>Welcome to the advanced menu.</p>
+	</div>
+	<div id="my-header" class="mh-head Sticky">
+		<span class="mh-btns-left">
+			<a class="fa fa-bars" href="#my-menu"></a>
+		</span>
+		<span class="mh-text">demo</span>
+	</div>
+	<!-- subpanel -->
+	<div id="subpanel" class="Panel">
+		<p>This is the subpanel.</p>
+	</div>
+	<ul>
+		<li class="Selected"><a href="/">Home</a></li>
+		<li><a href="/about">item2</a></li>
+		<li>
+			<a href="/courses">Courses</a>
+			<ul>
+				<li><a href="/course/htmlesentials">HTML Esentials</a></li>
+				<li><a href="/course/html-guru">HTML Guru</a></li>
+				<li><a href="/course/js-junior">JS junior</a></li>
+				<li><a href="/course/php">PHP</a></li>
+			</ul>
+		</li>
+		<li><a href="#">item4</a></li>
+		<li><a href="#">item5</a></li>
+		<li><a href="#">item6</a></li>
+	</ul>
 </nav>

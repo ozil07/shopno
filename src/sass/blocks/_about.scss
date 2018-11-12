@@ -1,3 +1,59 @@
 .aboutus {
     padding: 130px 0;
+
+    .aboutus__photo {
+    	img {
+    		width: 70%;
+    		max-width: 380px;
+    		height: auto;
+    		box-shadow: 0 0 30px rgba(20, 20, 21, 0.13), -80px 0 0 -40px #eff0f2, 80px 0 0 -40px #eff0f2;
+    		// margin: 0 auto;
+
+    		@include max-screen(991.98px) {
+    			width: 100%;
+    			box-shadow: 0 0 30px rgba(20, 20, 21, 0.13), -40px 0 0 -20px #eff0f2, 40px 0 0 -20px #eff0f2;
+    		}
+    	}
+    }
+
+    .aboutus__item {
+    	padding: 50px 0 0;
+    }
+
+}
+
+a[data-readmore-toggle] {
+	display: none;
+	@include max-screen(576px) {
+		display: block;
+		width: 150px;
+		text-align: center;
+		background-color: #f6f6f6;
+		font-size: 14px;
+		margin: 0 auto;
+		font: bold 14px $mons;
+		text-transform: uppercase;
+		padding: 10px;
+		color: #333;
+		position: relative;
+	}
+}
+
+
+.owl-theme .owl-nav {
+	button {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+	}
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+    background: $blue;
 }
